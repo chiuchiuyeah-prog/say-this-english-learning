@@ -1,6 +1,6 @@
 # 六個介面：需求、線稿 Prompt 與 Stitch Prompt
 
-本文件供「我想說這句｜Say This」課堂原型使用。流程為：先用「線稿 Prompt」生成低擬真 wireframe，確認資訊層級與操作順序；再將同一頁的「Stitch Prompt」貼到 Stitch 生成高擬真手機介面。
+本文件供「我想說這句｜Say This」課堂原型使用。老師要求的主要流程是：先用一個「六頁線稿總 Prompt」一次生成六張低擬真 wireframe；確認後，再用一個「六頁 Stitch 總 Prompt」一次生成六個一致的高擬真手機介面。後面的單頁 Prompt 只在某一頁需要補做或修正時使用。
 
 ## 共用設計規則
 
@@ -18,6 +18,169 @@
 - 操作：觸控區至少 44 px；重要文字維持高對比。
 - 導覽：主要功能頁底部使用「首頁／句子庫／複習」三項導覽；程度設定頁不顯示底部導覽。
 - 文案語氣：直接、溫和、不責備，不使用遊戲化幼稚語氣。
+
+---
+
+## 一次生成六張：線稿總 Prompt
+
+請將下面整段一次貼入線稿生成工具，不要拆成六次：
+
+```text
+請為手機 App「我想說這句｜Say This」一次產生完整的六頁低擬真線稿。這是一款給 18 歲以上華語英文學習者使用的產品：使用者輸入生活中真正想說的中文，系統依其英文程度、情境與語氣提供自然英文，接著協助理解、收藏與複習。
+
+輸出要求：
+- 一次輸出六張獨立的手機直式介面，不是同一頁的六種版本，也不是一張長頁面。
+- 六張介面放在同一個設計板上，以 3×2 或 2×3 方式排列，每張手機框比例約 390×844。
+- 每張畫面外側清楚標示編號與名稱：01 程度設定、02 輸入首頁、03 英文結果、04 句子解析、05 句子庫、06 句子複習。
+- 只使用黑、白、灰與線框，呈現低擬真 wireframe；不要正式配色、照片、插圖、3D 圖像、漸層或裝飾。
+- 六頁沿用同一套頁首、卡片、按鈕、欄位、標籤、字級與間距。
+- 主要功能頁底部使用相同的「首頁／句子庫／複習」導覽；程度設定頁不顯示底部導覽。
+- 強調操作順序與資訊層級，觸控元件大小合理，避免把所有資訊塞在同一頁。
+
+01 程度設定：
+- 品牌名稱「我想說這句」與標題「你的英文目前比較接近哪一種？」
+- 輔助文字「不用擔心，之後可以隨時調整。」
+- 三張大型單選卡：入門 A1–A2、中階 B1–B2、進階 C1 以上，每張都有白話能力描述。
+- 中階為選取示例。
+- 底部全寬按鈕「開始使用」，此頁沒有底部導覽。
+
+02 輸入首頁：
+- 頁首「今天想說什麼？」與可調整程度標籤「中階 B1–B2」。
+- 大型多行輸入框「你現在想用英文說什麼？」；示範內容「我今天工作很多，可能會晚一點下班。」
+- 情境選擇：日常、工作、旅行、社交，工作為選取狀態。
+- 語氣選擇：自然、正式、禮貌、輕鬆，自然為選取狀態。
+- 全寬按鈕「看看英文怎麼說」。
+- 底部導覽首頁為選取狀態。
+
+03 英文結果：
+- 返回按鈕與標題「英文怎麼說」。
+- 小卡顯示原始中文，以及「工作／自然／中階」標籤。
+- 主要結果卡標示「推薦給你的說法」，大字顯示 “I have a lot on my plate today, so I might get off work a little late.”
+- 發音播放按鈕。
+- 三段切換：基礎版、自然版、精準版，自然版為選取狀態。
+- 操作「查看解析」「收藏這句」與文字連結「重新調整條件」。
+
+04 句子解析：
+- 返回按鈕與標題「這句怎麼用」。
+- 顯示完整英文句子，框選重點片語 “have a lot on my plate”，並有發音按鈕。
+- 三張解析卡：重點片語、句型結構、語氣與場合。
+- 一個收合區「看看其他說法」。
+- 底部固定主要按鈕「開始練習」與次要操作「收藏這句」。
+- 避免密集長文，不顯示底部主導覽。
+
+05 句子庫：
+- 標題「我的句子庫」與數量「12 句」。
+- 搜尋欄「搜尋中文或英文」。
+- 篩選：全部、待複習、學習中、已熟悉，以及情境篩選。
+- 三張句子卡，每張有中文、兩行內英文、情境與語氣標籤、熟悉度、下次複習時間、播放與更多操作。
+- 底部導覽句子庫為選取狀態。
+
+06 句子複習：
+- 頁首「今日複習」、進度「2／5」與進度條。
+- 題目卡顯示「工作／自然」、提示「請試著用英文說：」及中文句子「我今天工作很多，可能會晚一點下班。」
+- 大型英文輸入框「輸入你的英文句子」。
+- 次要操作「給我一個提示」與主要按鈕「送出答案」。
+- 未作答狀態不要提前顯示正確答案；預留送出後答案與解析區。
+- 底部導覽複習為選取狀態。
+
+請讓六張線稿明確構成同一條使用流程：程度設定 → 輸入中文 → 查看英文結果 → 理解句子 → 收藏到句子庫 → 進行複習。
+```
+
+---
+
+## 一次生成六張：Stitch 總 Prompt
+
+線稿確認後，請將下面整段一次貼入 Stitch。不要分頁貼，也不要逐張重新設定風格：
+
+```text
+Create a complete, coherent mobile app project with exactly six separate high-fidelity screens for「我想說這句｜Say This」, a Traditional Chinese English-learning app for adults. Generate all six screens at once as distinct mobile screens/routes. Do not create one long scrolling webpage, a desktop dashboard, six visual variations of one screen, or extra screens.
+
+Product goal:
+Users enter a real-life Chinese sentence, choose context and tone, receive English matched to their proficiency level, understand the expression, save it, and review it later.
+
+Shared design system for all six screens:
+- Portrait mobile canvas, 390×844 px per screen.
+- Traditional Chinese UI; English only for learning content and necessary level labels.
+- Mature, calm, trustworthy, and encouraging for users age 18+; not childish or game-like.
+- Cool off-white background #F7F8FC, deep navy text #172033, indigo primary #5B5BD6, teal accent #28B8A6.
+- Noto Sans TC for Chinese and Inter for English.
+- 16px rounded cards, subtle cool-gray borders, restrained soft shadows, generous whitespace.
+- Solid indigo primary buttons with white text; outlined secondary buttons.
+- Simple consistent outline icons. No photos, emojis, flags, mascots, 3D illustrations, confetti, streak flames, or heavy gradients.
+- Minimum 44px touch targets, accessible text contrast, clear selected states using color plus border or icon.
+- Main screens share a bottom navigation with outline icons and labels「首頁」「句子庫」「複習」. Screen 01 has no bottom navigation. Screen 04 uses a sticky learning action area instead of bottom navigation.
+- Use the same component styles, typography scale, spacing, buttons, cards, chips, and icon family across all screens.
+
+Generate these exactly six screens:
+
+SCREEN 01 —「程度設定」
+- Small brand lockup「我想說這句」with “Say This”.
+- Heading「你的英文目前比較接近哪一種？」and supporting text「不用擔心，之後可以隨時調整。」
+- Three stacked selectable level cards with radio controls:
+  1.「入門」A1–A2／「能理解常見單字與簡單句子，希望先把意思說清楚。」
+  2.「中階」B1–B2／「能應付日常對話，希望說得更自然、完整。」
+  3.「進階」C1 以上／「能理解複雜內容，希望掌握細微語氣與精準用法。」
+- Show「中階」selected with indigo border, tinted background, and selected radio.
+- Sticky full-width primary button「開始使用」.
+- No bottom navigation.
+
+SCREEN 02 —「輸入首頁」
+- Header heading「今天想說什麼？」and subtitle「把生活中的一句話，變成真正會用的英文。」
+- Tappable level chip「中階 B1–B2」at top right.
+- Large multiline input card labeled「你現在想用英文說什麼？」with sample input「我今天工作很多，可能會晚一點下班。」and a small character count.
+- Context chips「日常」「工作」「旅行」「社交」with「工作」selected.
+- Tone chips「自然」「正式」「禮貌」「輕鬆」with「自然」selected.
+- Full-width primary button「看看英文怎麼說」.
+- Bottom navigation with「首頁」active.
+
+SCREEN 03 —「英文結果」
+- Top app bar with back arrow and title「英文怎麼說」.
+- Compact source card showing「我今天工作很多，可能會晚一點下班。」and chips「工作」「自然」「中階」.
+- Dominant result card with teal label「推薦給你的說法」.
+- Large English sentence: “I have a lot on my plate today, so I might get off work a little late.”
+- Small explanation「日常工作場合自然、完整的說法。」and audio control「聽發音」.
+- Segmented control「基礎版」「自然版」「精準版」with「自然版」selected.
+- Primary button「查看解析」, secondary button「收藏這句」, and low-emphasis text action「重新調整條件」.
+- Bottom navigation visible.
+- Do not show full vocabulary or grammar explanations on this screen.
+
+SCREEN 04 —「句子解析」
+- Top app bar with back arrow and title「這句怎麼用」.
+- Sentence header card with the full English sentence. Highlight “have a lot on my plate” with a soft teal background. Add audio action「聽發音」.
+- Three concise learning cards:
+  1.「重點片語」: “have a lot on my plate”／「手上有很多事要處理」／「比 have a lot of work 更口語自然。」
+  2.「句型結構」: visually show「原因 I have...」→「結果 so I might...」.
+  3.「語氣與場合」: chips「自然」「工作」「口語」and text「適合對同事或朋友說明今天可能晚下班。」
+- Collapsed accordion「看看其他說法」with subtitle「比較基礎版與精準版」.
+- Sticky bottom action area with primary button「開始練習」and secondary bookmark action「收藏這句」.
+- No main bottom navigation on this screen. Keep paragraphs short.
+
+SCREEN 05 —「我的句子庫」
+- Header title「我的句子庫」and count「12 句」.
+- Search field「搜尋中文或英文」.
+- Scrollable filter chips「全部」「待複習」「學習中」「已熟悉」with「全部」selected, plus separate filter button「情境」.
+- Show three saved sentence cards. Each includes Chinese source, English expression limited to two lines, chips such as「工作」「自然」, familiarity status, next review text such as「今天複習」or「3 天後」, audio icon, and overflow menu.
+- Use text plus accessible color for status; no tables or crowded metadata.
+- Bottom navigation with「句子庫」active.
+
+SCREEN 06 —「句子複習」
+- Top row with close icon, centered title「今日複習」, and progress「2／5」. Add a thin 40% progress bar.
+- Main prompt card with chips「工作」「自然」, label「請試著用英文說：」and large Chinese sentence「我今天工作很多，可能會晚一點下班。」
+- Large multiline answer field「輸入你的英文句子」and optional action「給我一個提示」.
+- Full-width primary button「送出答案」.
+- Default state is unanswered: do not reveal the correct answer. Show only a subtle collapsed note「送出後會顯示答案與解析」.
+- Bottom navigation with「複習」active.
+- Define later feedback states in the component styling: correct uses teal with「答對了」; incorrect uses warm amber, not red, with「再練一次就會更熟」. After submission, the design should support showing the correct answer, meaningful differences, and self-rating buttons「還不熟」「有點熟」「已熟悉」.
+
+Create a visually consistent connected flow between the six screens:
+01 開始使用 → 02 首頁
+02 看看英文怎麼說 → 03 英文結果
+03 查看解析 → 04 句子解析
+03 收藏這句 → 05 句子庫
+05 開始複習 → 06 句子複習
+
+Label all six generated screens clearly in the project and preserve exact Traditional Chinese copy. Prioritize clarity, learning hierarchy, and realistic mobile spacing over decorative visuals.
+```
 
 ---
 
@@ -344,12 +507,9 @@ Also define visual states for later implementation: correct uses teal with text�
 
 ---
 
-## 建議的生成順序
+## 老師要求的實際操作順序
 
-1. 先生成「輸入首頁」，確認整體品牌與元件風格。
-2. 再生成「英文結果」與「句子解析」，確認主要學習流程。
-3. 接著生成「句子庫」與「句子複習」。
-4. 最後生成「程度設定」，讓它沿用前面已確立的視覺系統。
-
-每次送入 Stitch 時，如果工具能加入參考畫面，請把前一張已確認的畫面一併提供，並補充：「沿用同一套色彩、字體、按鈕、卡片、間距與底部導覽，不重新設計品牌風格。」
-
+1. 複製「一次生成六張：線稿總 Prompt」，一次取得六張 wireframe。
+2. 檢查六張是否都有產生、流程是否完整、首頁與結果頁層級是否清楚。
+3. 將「一次生成六張：Stitch 總 Prompt」整段貼入 Stitch，一次建立六個畫面。
+4. 如果只有其中一頁不理想，再使用後面的單頁 Prompt 修正該頁，不要重新生成整套。
