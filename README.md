@@ -46,8 +46,8 @@ flowchart LR
 - [架構圖與資料模型](docs/architecture-data-model.md)
 - [狀態流與畫面示意](docs/state-flow-wireframes.md)
 - [素材清單與 MVP 範圍](docs/assets-scope.md)
+- [六個介面：需求、線稿與 Stitch Prompt](docs/interface-prompts.md)
 
 ## 專案狀態
 
 目前為產品規劃與原型階段，尚未進入正式開發。
-
